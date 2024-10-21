@@ -1,6 +1,6 @@
 const dados = {
-    "state": "SP",
-    "cities": [
+  "state": "SP",
+  "cities": [
       "EMBU",
       "VÁRZEA PAULISTA",
       "VARGEM GRANDE PAULISTA",
@@ -65,7 +65,7 @@ const dados = {
       "ARUJÁ",
       "ARAÇARIGUAMA",
       "ALUMÍNIO"
-    ]
-  }
+  ]
+}
 
-  export default dados; 
+export default dados;

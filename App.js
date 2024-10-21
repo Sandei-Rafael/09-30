@@ -1,14 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import dados from './service/dados.js'
-import card_cidade from './components/card_cidade.js';
+import dados from './service/dados.js';
+import CardCidade from './components/card_cidade'; // Corrigir o nome da importação
+
+const  exibirNaTela = ({cities,uf,index})=>{
+  <CardCidade
+    cities={cities}
+    uf={uf}
+    key={index}
+  />
+}
 
 export default function App() {
-  console.log(dados);
+  console.log(dados.state, dados.cities);
   return (
     <View style={styles.container}>
-      <Text>Teste</Text>
+        <FlashList
+        data={dados.cities }
+        renderItem={(d) => {exibirNaTela(d.item,dados.state,d.index)}}
+        estimatedItemSize={200}
+      />
+      {/* <CardCidade nome="Tiete" uf="SP" key={111}/> Corrigir o nome do componente */}
       <StatusBar style="auto" />
     </View>
   );
